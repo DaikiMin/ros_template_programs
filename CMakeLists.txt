@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(ros_template_programs)
 
-## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
-
 find_package(catkin REQUIRED COMPONENTS
   actionlib
   actionlib_msgs
@@ -11,6 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  pluginlib
+  nodelet
 )
 
 ## Generate messages in the 'msg' folder
@@ -70,3 +69,7 @@ add_dependencies(action_client_template ${PROJECT_NAME}_generate_messages_cpp)
 add_executable(action_server_template src/action_server_template.cpp)
 target_link_libraries(action_server_template ${catkin_LIBRARIES})
 add_dependencies(action_server_template ${PROJECT_NAME}_generate_messages_cpp)
+
+add_library(${PROJECT_NAME} src/nodelets/plugin_nodelet_topic_publisher_template.cpp
+                            src/nodelets/plugin_nodelet_topic_subscriber_template.cpp )
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
