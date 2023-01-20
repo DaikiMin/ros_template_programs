@@ -3,12 +3,12 @@
         <!-- publisher -->
         <node pkg="ros_template_programs" type="topic_publisher_template.py" name="publisher" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
             <rosparam>
-                message : Hello, SOBIT members!! 1
+                message : Hello, World!! 1
             </rosparam>
         </node>
         <node pkg="ros_template_programs" type="topic_publisher_template.py" name="publisher2" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
             <rosparam>
-                message : Hello, SOBIT members!! 2
+                message : Hello, World!! 2
             </rosparam>
         </node>
         <!-- subscriber -->
