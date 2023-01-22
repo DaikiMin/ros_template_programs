@@ -12,7 +12,6 @@ namespace ros_template_programs {
 
         public:
             TopicSubscriber( );
-            void loopPublish();
     };
 }
 
@@ -22,7 +21,7 @@ void ros_template_programs::TopicSubscriber::callbackMessage( const std_msgs::St
 }
 
 ros_template_programs::TopicSubscriber::TopicSubscriber( ) : nh_(), pnh_("~") {
-    sub_msg_ = nh_.subscribe( "pub_msg", 1, &ros_template_programs::TopicSubscriber::callbackMessage, this );
+    sub_msg_ = nh_.subscribe( "topic", 1, &ros_template_programs::TopicSubscriber::callbackMessage, this );
 }
 
 int main(int argc, char *argv[])  {

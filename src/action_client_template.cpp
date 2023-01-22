@@ -62,7 +62,7 @@ void ros_template_programs::ActionClient::loopCallServer( ) {
             sendGoal();
             ROS_INFO( "[ %s ] Set a new target_time = %.2f\n", ros::this_node::getName().c_str(), target_time );
             action_executing_ = true;
-        } 
+        }
 		ros::spinOnce();
 		loop_rate.sleep();
 	}
